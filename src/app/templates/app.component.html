@@ -1,0 +1,20 @@
+<!-- #input est un template reference variable -->
+<h1>Welcome to {{titre}}!</h1>
+<!-- keyup is an event which is triggered when a key is released from the keyboard -->
+<input 
+    #maVariable 
+    (keyup.enter)="selectPokemon(maVariable.value)"
+    type="number" 
+    placeholder="Enter a number"
+/>
+<!-- *ngIf is a structural directive. It will add or remove the element from the DOM -->
+<p *ngIf="pokemonSelected">
+    Vous avez séléctionné le pokémon: {{pokemonSelected.name}}</p>
+<p *ngIf="!pokemonSelected">Vous n'avez pas séléctionné de pokémon</p>
+<!-- *ngFor is a structural directive. It will add or remove the element from the DOM -->
+
+<p>Liste des pokemons:</p><!-- *ngFor est une directive -->
+  <ul>
+    <li *ngFor="let pokemon of listePokemons">
+        <p>{{pokemon.name}}</p>
+      </li>
